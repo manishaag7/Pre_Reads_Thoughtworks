@@ -1,0 +1,47 @@
+function map(arr,func){
+	const result=[];
+	for(let i=0;i<arr.length;i++){
+		result.push(func(arr[i]));
+	}
+	return result;
+}
+
+function filter(arr1,func1){
+	const result=[];
+	for(let i=0;i<arr1.length;i++){
+		if(func1(arr1[i])==true)
+			result.push(arr1[i]);
+	}
+	return result;
+}
+
+function reduce(callback){
+	let sum=0;
+	for(let i=0;i<this.length;i++){
+		callback(sum+this[i]);
+	}
+	return sum;
+}
+
+function forEach(arr,callback1){	
+	for(let i=0;i<arr.length;i++){
+		callback1(arr[i]);
+	}
+}
+
+
+let arr=[1,2,3,4,5];
+const func= n=>n**2;
+let arr1=map(arr, func); //arr1 = [1,4,9,16,25]
+console.log(arr1);
+
+const func1= n=>n<=10;
+let arr2=filter(arr1, func1); //arr2=[1,4,9]
+console.log(arr2);
+
+const callback= (acc,curr) => acc+curr;
+let sum=arr1.reduce(callback); //sum ==55
+console.log(sum);
+
+const callback1 = arr => console.log(arr);
+forEach(arr,callback1); //1 2 3 4 5

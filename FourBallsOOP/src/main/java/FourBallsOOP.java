@@ -41,13 +41,13 @@ public class FourBallsOOP extends PApplet{
 
     @Override
     public void draw() {
-        drawCircle1(ball1);
-        drawCircle1(ball2);
-        drawCircle1(ball3);
-        drawCircle1(ball4);
+        drawCircle(ball1);
+        drawCircle(ball2);
+        drawCircle(ball3);
+        drawCircle(ball4);
     }
 
-    private void drawCircle1(Ball Obj) {
+    private void drawCircle(Ball Obj) {
         ellipse(Obj.start,Obj.height,Ball.DIAMETER,Ball.DIAMETER);
         Obj.start+=Obj.speed;
     }
